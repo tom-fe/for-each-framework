@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'for-each-framework' target in the 'for-each-framework' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import "for_each_framework.h"
+#endif
