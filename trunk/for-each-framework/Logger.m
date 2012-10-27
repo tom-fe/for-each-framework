@@ -8,6 +8,8 @@
 
 #import "Logger.h"
 
+static NSDateFormatter* dateFormat;
+
 @implementation Logger
 
 void CustomLog(const char *functionName, int lineNumber, NSString *format,...)
@@ -27,19 +29,19 @@ void CustomLog(const char *functionName, int lineNumber, NSString *format,...)
     // No need of the arguments anymore
     va_end (ap);
     
+    if (dateFormat == nil)
+    {
+        dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"hh:mm:ss.SSS"];
+    }
+    
     // Format to have only the information we need - Date with the time + milliseconds we want
     NSDate *today = [NSDate date];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"hh:mm:ss.SSS"];
     NSString *dateString = [dateFormat stringFromDate:today];
     
-    [dateFormat release];
     
     // Print by the custom format
-    fprintf(stderr,"%s ->[%d]: %s\n%s------------------\n",[dateString UTF8String],lineNumber,functionName,[body UTF8String]);
-    
-    // Release the string we created for the body
-    [body release];
+    fprintf(stderr,"%s : %s [line %d] -> %s",[dateString UTF8String],functionName,lineNumber,[body UTF8String]);
 }
 
 @end

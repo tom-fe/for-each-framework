@@ -6,10 +6,5 @@
 //  Copyright (c) 2012 for-each. All rights reserved.
 //
 
-
-#import <Foundation/Foundation.h>
 #import "Logger.h"
 
-@interface for_each_framework : NSObject
-
-@end

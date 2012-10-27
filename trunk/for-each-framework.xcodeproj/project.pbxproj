@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8630ACEE154FBFDA00064682 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8630ACEC154FBFDA00064682 /* Logger.m */; };
 		8680D901154F31210030265E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8680D900154F31210030265E /* Foundation.framework */; };
-		8680D907154F31210030265E /* for_each_framework.m in Sources */ = {isa = PBXBuildFile; fileRef = 8680D906154F31210030265E /* for_each_framework.m */; };
 		869A30A21555A42C00B2E5FE /* for_each_framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 8680D905154F31210030265E /* for_each_framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		869A30A81555A62000B2E5FE /* Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = 8630ACEB154FBFDA00064682 /* Logger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -21,7 +20,6 @@
 		8680D900154F31210030265E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8680D904154F31210030265E /* for-each-framework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "for-each-framework-Prefix.pch"; sourceTree = "<group>"; };
 		8680D905154F31210030265E /* for_each_framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = for_each_framework.h; sourceTree = "<group>"; };
-		8680D906154F31210030265E /* for_each_framework.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = for_each_framework.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +64,6 @@
 			children = (
 				869A30A71555A5C200B2E5FE /* Logger */,
 				8680D905154F31210030265E /* for_each_framework.h */,
-				8680D906154F31210030265E /* for_each_framework.m */,
 				8680D903154F31210030265E /* Supporting Files */,
 			);
 			path = "for-each-framework";
@@ -169,7 +166,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8680D907154F31210030265E /* for_each_framework.m in Sources */,
 				8630ACEE154FBFDA00064682 /* Logger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +218,7 @@
 		8680D90B154F31210030265E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/for_each_framework.dst;
@@ -238,6 +235,7 @@
 		8680D90C154F31210030265E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/for_each_framework.dst;
